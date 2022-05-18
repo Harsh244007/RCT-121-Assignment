@@ -2,7 +2,7 @@ import React, { useState } from "react";
 const data = [
   {
     id: 1,
-    name: "Patel",
+    name: "Chintu ",
     email: "p@gmail.com",
     phone: "8141217888",
     img: "https://media.istockphoto.com/photos/young-beautiful-woman-holding-a-bouquet-of-flowers-picture-id1357538784",
@@ -66,16 +66,27 @@ export default function Contact() {
     </div>
   );
 }
+var count = 0;
 const ContactCard = ({ id, name, phone, email, img }) => {
+  const showresult = () => {
+    count++;
+    ContactCard();
+  };
   return (
     <div
+      onClick={showresult}
       style={{
         display: "flex",
         border: "1px",
-        border: "1px solid black",
-        gap: "0vw",
+        border: "1px solid grey",
+        gap: "5vw",
+        alignItems: "center",
         margin: "auto",
-        padding:"auto"
+        width: "30vw",
+        height: "auto",
+        marginBottom: "1vw",
+        padding: "auto",
+        justifyContent: "center",
       }}
     >
       <img
@@ -94,8 +105,8 @@ const ContactCard = ({ id, name, phone, email, img }) => {
       >
         <p style={{ margin: "0px 0px" }}> {name}</p>
         <p style={{ margin: "0px 0px" }}> {email}</p>
-        <p style={{ display: "none" }}>{phone}</p>
-      </div>
+        <p>{phone}</p>
+    </div>
     </div>
   );
 };

@@ -68,9 +68,10 @@ export default function Contact() {
 }
 const ContactCard = ({ id, name, phone, email, img }) => {
   return (
-    <div>
-      {name}
-      {phone}
+    <div style={{ display: "grid" }}>
+      <p> {name}</p>
+      <p>{phone}</p>
+
       {email}
       {img}
     </div>
